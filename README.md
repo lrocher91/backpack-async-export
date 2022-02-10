@@ -136,7 +136,7 @@ class UserExport implements ExportWithName
 
 ### Multi export by CRUD?
 
-You can easily have multi export on save CRUD.  
+You can easily have multi export on same CRUD.  
 Your CRUD controller need to implement `Thomascombe\BackpackAsyncExport\Http\Controllers\Admin\Interfaces\MultiExportableCrud` interface.  
 
 ```php
