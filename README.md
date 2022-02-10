@@ -91,6 +91,7 @@ public function setup()
 ```php
 use Thomascombe\BackpackAsyncExport\Enums\ExportStatus;
 use Thomascombe\BackpackAsyncExport\Models\ImportExport;
+use Thomascombe\BackpackAsyncExport\Models\ActionType;
 
 public function getExport(): ImportExport
 {
@@ -99,6 +100,7 @@ public function getExport(): ImportExport
         ImportExport::COLUMN_STATUS => ExportStatus::Created,
         ImportExport::COLUMN_FILENAME => sprintf('export/users_%s.xlsx', now()->toIso8601String()),
         ImportExport::COLUMN_EXPORT_TYPE => UserExport::class,
+        ImportExport::COLUMN_ACTION_TYPE => ActionType::Export,
     ]);
 }
 
@@ -152,6 +154,7 @@ public function setup()
 ```php
 use Thomascombe\BackpackAsyncExport\Enums\ExportStatus;
 use Thomascombe\BackpackAsyncExport\Models\ImportExport;
+use Thomascombe\BackpackAsyncExport\Models\ActionType;
 
 public function getImport(): ImportExport
 {
@@ -160,6 +163,7 @@ public function getImport(): ImportExport
         ImportExport::COLUMN_STATUS => ExportStatus::Created,
         ImportExport::COLUMN_FILENAME => sprintf('export/users_%s.xlsx', now()->toIso8601String()),
         ImportExport::COLUMN_EXPORT_TYPE => UserExport::class,
+        ImportExport::ACTION_TYPE => ActionType::Import,
     ]);
 }
 
